@@ -1,28 +1,26 @@
-# Userenv zsh plugin
+# Env zsh plugin
 
-This plugin automatically sources any file called `$USER.env` when it exists in the current working directory. For example, for a user logged in as "schoon", this plugin will look for `schoon.env` in two situations:
+This plugin automatically loads any environment variables in any file called `.env` when it exists in the current working directory. This plugin will load `.env` in two situations:
 
 - When the shell first starts (e.g. you open a new window or tab).
 - When you change the current working directory.
 
-Because this uses `source`, you can put _any_ valid zsh code in this file! You can add functions, change the `PATH`, etc.
-
-On the other hand, there's a caveat: because this plugin uses `source`, any changes you make will persist for as long as the shell is alive. For example, if two directories (e.g. two different software projects) rely on the same variable (e.g. `PORT`), you'll need to make sure that _both_ `$USER.env` files set that variable, or that _neither_ do. Otherwise, you'll get unexpected behaviour. **TL;DR:** When in doubt, re-initialize all state in each `$USER.env` file.
+There's a caveat: because this plugin uses `source`, any changes you make will persist for as long as the shell is alive. For example, if two directories (e.g. two different software projects) rely on the same variable (e.g. `PORT`), you'll need to make sure that _both_ `.env` files set that variable, or that _neither_ do. Otherwise, you'll get unexpected behaviour. **TL;DR:** When in doubt, re-initialize all state in each `.env` file.
 
 ## Installation
 
-Assuming you have Oh-my-zsh installed, you should be able to install `userenv` like any other zsh plugin. (In particular, notice that the `git clone` line specifies a different target directory, `userenv`, than what would be the default, `userenv-zsh`.)
+Assuming you have Oh-my-zsh installed, you should be able to install `env` like any other zsh plugin. (In particular, notice that the `git clone` line specifies a different target directory, `env`, than what would be the default, `env-zsh`.)
 
 ```
 cd ~/.oh-my-zsh/plugins
-git clone https://github.com/schoonology/userenv-zsh.git userenv
+git clone https://github.com/shoekstra/env-zsh.git env
 ```
 
 Once the plugin is installed, you can enable it by editing your plugin list in `~.zshrc`:
 
 ```
 ...
-plugins=(... userenv)
+plugins=(... env)
 ...
 ```
 
