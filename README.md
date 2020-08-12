@@ -26,6 +26,10 @@ plugins=(... env)
 
 Once you've saved `~/.zshrc`, you'll need to reload it with `source ~/.zshrc`.
 
+## Usage
+
+Create a `.env` file in your directory of choice and define environment variables in a KEY=VAL format, each on it's own line. The next time you change into that directory, or start a new shell in that directory, the `.env` contents will be exported as shell variables.
+
 ## Thanks
 
 Special thanks to John Hamelink, who created [env-zsh](https://github.com/johnhamelink/env-zsh), and Michael Schoonmaker, who created [userenv-zsh](https://github.com/Schoonology/userenv-zsh), upon which this plugin is based.

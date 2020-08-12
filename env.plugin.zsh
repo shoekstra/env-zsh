@@ -1,19 +1,19 @@
 # Userenv plugin
 #
-# Ensures any filed called `$USER.env` is sourced when present in the current
+# Ensures any filed called `.env` is sourced when present in the current
 # working directory.
 
-load-local-user-env() {
-  ENV_FILE="$USER.env"
-
-  if [[ -f $ENV_FILE && -r $ENV_FILE ]]; then
-    source $ENV_FILE
+load-local-env() {
+  if [[ -f .env && -r .env ]]; then
+    set -o allexport
+    source .env
+    set +o allexport
   fi
 }
 
-# Source `$USER.env` when the cwd changes.
+# Source `.env` when the cwd changes.
 autoload -U add-zsh-hook
-add-zsh-hook chpwd load-local-user-env
+add-zsh-hook chpwd load-local-env
 
-# Source `$USER.env` when the shell starts.
-load-local-user-env
+# Source `.env` when the shell starts.
+load-local-env
