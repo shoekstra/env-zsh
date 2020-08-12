@@ -26,6 +26,6 @@ plugins=(... env)
 
 Once you've saved `~/.zshrc`, you'll need to reload it with `source ~/.zshrc`.
 
-## Alternatives
+## Thanks
 
-Special thanks to John Hamelink, who created [env-zsh](https://github.com/johnhamelink/env-zsh), upon which this plugin is based. His plugin consistently loads a filed called `.env`, which is much simpler. However, some systems (like Docker Compose) already use `.env` for a different purpose, so I decided to use `$USER.env` instead.
+Special thanks to John Hamelink, who created [env-zsh](https://github.com/johnhamelink/env-zsh), and Michael Schoonmaker, who created [userenv-zsh](https://github.com/Schoonology/userenv-zsh), upon which this plugin is based.
